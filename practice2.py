@@ -1,14 +1,8 @@
-import fitbit
-from secret import client_id, client_secret
+test_list = []
+for x in range(7):
+	a = x
+	b = x+1
+	c = x-2
+	test_list.append([a, b, c])
 
-# You'll have to gather the tokens on your own, or use
-# ./gather_keys_oauth2.py
-authd_client = fitbit.Fitbit(client_id, client_secret,
-                             access_token='<access_token>', refresh_token='<refresh_token>')
-authd_client.activities()
-
-
-
-unauth_client = fitbit.Fitbit(client_id, client_secret)
-# certain methods do not require user keys
-unauth_client.activity_units()
+print(test_list[0][1])

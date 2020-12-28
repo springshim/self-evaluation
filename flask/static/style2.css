@@ -1,0 +1,15 @@
+body {
+    background-color: salmon;
+}
+
+h1 {
+    color: brown;
+    font-family: fantasy;
+    font-size: 44;
+}
+
+li {
+    color: black;
+    font-family: monospace;
+    font-size: 33;
+}
