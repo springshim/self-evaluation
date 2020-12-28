@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Weekly Step Count</h1>
+
+<div id="columnchart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Date', 'steps per Day', 'goal'],
+  ['Mon', 8, 10],
+  ['Tue', 2, 10],
+  ['Wed', 4, 10],
+  ['Thur', 2, 10],
+  ['Fri', 18, 10],
+  ['Sat', 2, 10],
+  ['Sun', 18, 10]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {seriesType: 'bars', series: {5: {type: 'line'}}, 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="columnchart"
+  var chart = new google.visualization.ComboChart(document.getElementById('columnchart'));
+  chart.draw(data, options);
+}
+</script>
+
+</body>
+</html>

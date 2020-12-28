@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Autonomy</title>
+    <link rel="stylesheet" type="text/css" href="style/autonomy.css" />
+    <style>
+        div,pre { background : #FFF; padding:10px; margin:10px; }
+        table { border:1px solid #AAA; }
+        td { border:1px solid #AAA; width:25px; height:25px; }
+        .selected { background:salmon }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("td").each(function () {
+                $(this).click(function () {
+                	$("td").removeClass("selected");
+                    $(this).addClass("selected");
+                });
+            });
+        });
+    </script>
+
+  </head>
+  <body>
+    <h1>Intervention Type 1</h1>
+    <p>How do you feel about your efforts to be active this past week? Select the emoji that best represents your feeling about your activity efforts.</p>
+
+
+    <table style="width:100%">
+	  <tr>
+	    <td>😀</td>
+	    <td>😎</td>
+	    <td>😍</td>
+	    <td>😆</td>
+	    <td>😄</td>
+	  </tr>
+	  <tr>
+	    <td>😉</td>
+	    <td>😅</td>
+	    <td>🙂</td>
+	    <td>🤩</td>
+	    <td>😙</td>
+	  </tr>
+	  <tr>
+	    <td>😥</td>
+	    <td>😕</td>
+	    <td>😧</td>
+	    <td>😨</td>
+	    <td>😤</td>
+	  </tr>
+	  <tr>
+	    <td>😫</td>
+	    <td>😭</td>
+	    <td>😱</td>
+	    <td>😵</td>
+	    <td>😡</td>
+	  </tr>
+	</table>
+
+
+    <a href="stepcount.html" class="previous">&laquo; Previous</a>
+    <a href="autonomy2.html" class="next">Next &raquo;</a>
+
+
+
+  </body>
+</html>

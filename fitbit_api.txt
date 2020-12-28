@@ -1,0 +1,14 @@
+OAuth 2.0 Client ID
+22BS6D
+
+Client Secret
+78b8ba5f246fab2f7b60f24f2cebd7d8
+
+Callback URL
+https://www.intecolab.com/
+
+OAuth 2.0: Authorization URI
+https://www.fitbit.com/oauth2/authorize
+
+OAuth 2.0: Access/Refresh Token Request URI
+https://api.fitbit.com/oauth2/token
