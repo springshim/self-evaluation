@@ -2,21 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Self-Efficacy</title>
+    <title>Autonomy</title>
     <link rel="stylesheet" type="text/css" href="style/autonomy.css" />
+    <style>
+        div,pre { background : #FFF; padding:10px; margin:10px; }
+        table { border:1px solid #AAA; }
+        td { border:1px solid #AAA; width:25px; height:25px; }
+
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("td").each(function () {
+                $(this).click(function () {
+                  $("td").removeClass("selected");
+                    $(this).addClass("selected");
+                });
+            });
+        });
+    </script>
+
+
   </head>
   <body>
-    <h1>Intervention Type 2</h1>
-    
-    <form class="large_input_box">
-      <p>Sounds like things went well! What choices did you make that contributed to your success in being physically active this week? Name at least one specific choice you made.</p> <!-- positive case -->
-      <input type="text" id="pos_action" name="pos_action">
-   
-    </form> 
+    <h1>Intervention Type 1</h1>
+    <p>How do you hope to feel about your efforts to be physically active this coming week? Select the emoji that best represents these feelings. </p>
+
+    <table style="width:100%">
+    <tr>
+      <td><input type="button" class="positive" value="😀"></td>
+      <td><input type="button" class="positive" value="😎"></td>
+      <td><input type="button" class="positive" value="😍"></td>
+      <td><input type="button" class="positive" value="😆"></td>
+      <td><input type="button" class="positive" value="😄"></td>
+    </tr>
+    <tr>
+      <td><input type="button" class="positive" value="😉"></td>
+      <td><input type="button" class="positive" value="😅"></td>
+      <td><input type="button" class="positive" value="🙂"></td>
+      <td><input type="button" class="positive" value="🤩"></td>
+      <td><input type="button" class="positive" value="😙"></td>
+    </tr>
+    <tr>
+      <td><input type="button" class="negative" value="😥"></td>
+      <td><input type="button" class="negative" value="😕"></td>
+      <td><input type="button" class="negative" value="😧"></td>
+      <td><input type="button" class="negative" value="😨"></td>
+      <td><input type="button" class="negative" value="😤"></td>
+    </tr>
+    <tr>
+      <td><input type="button" class="negative" value="😫"></td>
+      <td><input type="button" class="negative" value="😭"></td>
+      <td><input type="button" class="negative" value="😱"></td>
+      <td><input type="button" class="negative" value="😵"></td>
+      <td><input type="button" class="negative" value="😡"></td>
+    </tr>
+  </table>
+
+
+    <p>Think about your plans for the upcoming week. What can you do to meet your physical activity goals? Name at least one particular action you can take. </p>
+    <input type="text" id="autonomy_response" name="autonomy_plans"><br>  
+
+
 
 
     <a href="autonomy1.html" class="previous">&laquo; Previous</a>
-    <a href="autonomy3.html" class="next">Next &raquo;</a>
+    <a href="success.html" class="next">Next &raquo;</a>
+
 
   </body>
 </html>
