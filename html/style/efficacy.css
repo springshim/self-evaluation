@@ -18,11 +18,15 @@ p, a, li{
 }
 
 .previous{
-	float: left;
+    position: absolute;
+    bottom: 20px;
+	left: 20px;
 }
 
 .next{
-	float: right;
+    position: absolute;
+    bottom: 20px;
+	right: 20px;
 }
 
 #trophyname{
