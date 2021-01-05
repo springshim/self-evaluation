@@ -55,17 +55,14 @@ table{
 }
 
 
-.pager{
-}
-
 .previous, .next {
   background-color: #f1f1f1;
   color: black;
+  vertical-align: bottom;
 }
 
 .previous{
 	float: left;
-
 }
 
 .next{

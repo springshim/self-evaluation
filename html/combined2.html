@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Intervention type 2 - first page</title>
-    <link rel="stylesheet" type="text/css" href="style/efficacy.css" />
+    <title>Intervention type 3 - second page</title>
+    <link rel="stylesheet" type="text/css" href="style/combined.css" />
   </head>
   <body>
 
@@ -34,15 +34,12 @@
     var database = firebase.database();
 
     function writeData() {
-      var postListRef = firebase.database().ref('user');
-      var newPostRef = postListRef.push();
-      newPostRef.set({
-        trophyname: document.getElementById("trophyname").value
+      firebase.database().ref("User").set({
+        trophyname: document.getElementById("trophyname").value,
+        name: document.getElementById("nameField").value
       });
-
     }
     firebase.analytics();
-
   </script>
 
 
@@ -68,13 +65,13 @@
     </ul>
 
     <div class="pager">
-      <a href="stepcount.html" class="previous">&laquo; Previous</a>
-      <a href="efficacy2.html" class="next" onclick="writeData()">Next &raquo;</a>
+      <a href="combined1.html" class="previous">&laquo; Previous</a>
+      <a href="combined3.html" class="next" onclick="writeData()">Next &raquo;</a>
     </div>
 
-
-    <button onclick="writeData()">Next</button>
-
+<!--
+    <button onclick="writeData()">Submit</button>
+-->
 
   </body>
 </html>
