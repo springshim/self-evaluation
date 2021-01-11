@@ -20,7 +20,7 @@
 
     const addBtn = document.getElementById("addBtn")
     const trophyname = document.getElementById("trophyname")
-    const time = new Dat();
+    const time = new Date();
 
     if(trophyname){
       addBtn.addEventListener('click', e => {

@@ -26,7 +26,7 @@ docs = db.collection('users').get()
 for doc in docs:
 	key = doc.to_dict()
 	#print(key)
-	if key['P_ID'] == 'T_001':
+	if key['Full_name'] == 'Bomi Shim':
 		#print(key['Full_name'])
 		access_token = key['Access_token']
 		user_id = key['User_ID']

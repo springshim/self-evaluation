@@ -56,15 +56,31 @@ table{
 
 
 .previous, .next {
-  background-color: #f1f1f1;
+  background-color: #e1e1e1;
   color: black;
-  vertical-align: bottom;
+  padding: 8px 16px;
 }
 
 .previous{
-	float: left;
+    position: absolute;
+    bottom: 20px;
+	left: 20px;
 }
 
 .next{
-	float: right;
+    position: absolute;
+    bottom: 20px;
+	right: 20px;
+}
+
+
+#trophyname{
+	width: 95%;	
+}
+
+#barriers, #efficacy_plans{
+	text-align: left;
+ 	margin: 0 auto;
+	height: 100px;
+	width: 95%;
 }
