@@ -21,8 +21,15 @@ docs = db.collection('users').get()
 
 for doc in docs:
     key = doc.to_dict()
-    if key['Full_Name'] == 'Bomi Shim':
-        print(key['P_ID'])
+    #print(key)
+    if key['P_ID'] == 'T_001': #this will be text from def my_form_post()
+        #print(key['Full_name'])
+        access_token = key['Access_token']
+        user_id = key['User_ID']
+
+
+print(access_token)
+print(user_id)
 
 
 
@@ -38,7 +45,7 @@ def my_form():
 def my_form_post():
     text = request.form['text']
     processed_text = text.upper()
-    return render_template('stepcount_fortest.html', name=processed_text)
+    return render_template('stepcount_fortest.html', name=processed_text, p='Unregistered Name')
 
 
 @app.route('/name/<bomi>')
@@ -54,8 +61,8 @@ def step():
     for x in range(7):
         date = now.strftime("%Y-%m-%d")
 
-        access_token='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkM2WEwiLCJzdWIiOiI2UVdSNTkiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyYWN0IHJwcm8iLCJleHAiOjE2NDE4ODY2ODMsImlhdCI6MTYxMDM1MDY4M30.j3S_fWaAzCyxtuzD-0aR0Z_pc2LqrbjUwHBE1ee_-WQ'
-        user_id='6QWR59'
+        #access_token='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkM2WEwiLCJzdWIiOiI2UVdSNTkiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyYWN0IHJwcm8iLCJleHAiOjE2NDE4ODY2ODMsImlhdCI6MTYxMDM1MDY4M30.j3S_fWaAzCyxtuzD-0aR0Z_pc2LqrbjUwHBE1ee_-WQ'
+        #user_id='6QWR59'
 
         activity_request = requests.get('https://api.fitbit.com/1/user/' + user_id + '/activities/date/' + date + '.json',
             headers={'Authorization': 'Bearer ' + access_token}).json()

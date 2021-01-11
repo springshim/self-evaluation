@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-cred = credentials.Certificate("path/to/serviceAccountKey.json")
+cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
 
 db=firestore.client()
@@ -25,6 +25,12 @@ docs = db.collection('users').get()
 
 for doc in docs:
 	key = doc.to_dict()
-	print(key)
-	if key['Full_Name'] == 'Bomi Shim':
-		print(key['P_ID'])
+	#print(key)
+	if key['P_ID'] == 'T_001':
+		#print(key['Full_name'])
+		access_token = key['Access_token']
+		user_id = key['User_ID']
+
+
+print(access_token)
+print(user_id)
