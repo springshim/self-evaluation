@@ -1,3 +1,5 @@
 serviceAccountKey.json
 secret.py
 fitbit_api.txt
+/html/script/myscripts.js
+flask/static/myscripts.js
