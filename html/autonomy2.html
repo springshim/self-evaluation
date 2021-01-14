@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Intervention type 1 - second page</title>
+    <title>Intervention type 2 - second page</title>
     <link rel="stylesheet" type="text/css" href="style/style.css" />
     <style>
         div,pre { background : #FFF; padding:10px; margin:10px; }
@@ -20,6 +20,8 @@
                 });
             });
         });
+
+
     </script>
 
 
@@ -32,37 +34,37 @@
 
 
 
-    <h1>Intervention Type 1</h1>
-    <p>How do you hope to feel about your efforts to be physically active <u>this coming week?</u> Select the emoji that best represents these feelings. </p>
-
-   <table>
+    <h1>This coming week</h1>
+    <p>How do you hope to feel about your efforts to be physically active <u>this coming week?</u> Select the emoji that best represents these feelings.</p>
+    
+    <table id="emoji">
     <tr>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="😀"></td>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="😎"></td>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="😍"></td>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="😆"></td>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="😄"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😀"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😎"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😍"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😆"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😄"></td>
     </tr>
     <tr>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="😉"></td>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="😅"></td>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="🙂"></td>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="🤩"></td>
-      <td onclick="future_emoji()"><input type="button" class="positive" value="😙"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😉"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😅"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="🙂"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="🤩"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😙"></td>
     </tr>
     <tr>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😥"></td>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😕"></td>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😧"></td>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😨"></td>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😤"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😥"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😕"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😧"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😨"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😤"></td>
     </tr>
     <tr>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😫"></td>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😭"></td>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😱"></td>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😵"></td>
-      <td onclick="future_emoji()"><input type="button" class="negative" value="😡"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😫"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😭"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😱"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😵"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😡"></td>
     </tr>
   </table>
 
@@ -70,7 +72,7 @@
   <p id="prompt"></p>
   <center>
   <div id="hide_text">
-    <input type="text" id="autonomy_response" name="autonomy_plans">
+    <input type="text" id="autonomy_plans" name="autonomy_plans">
   </div>
   </center>
 
@@ -83,13 +85,13 @@
         }
       }
 
-
     </script>
 
 
-
     <a href="autonomy1.html" class="previous">&laquo; Previous</a>
-    <a href="success.html" class="next">Next &raquo;</a>
+    <a href="success.html" class="next" id="addBtn2">Next &raquo;</a>
+
+
 
   <script src="script/myscripts.js"></script>
   </body>

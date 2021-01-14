@@ -17,10 +17,14 @@
 
     var db = firebase.firestore();
 
-    var fired_button;
+    var emoji;
+    var emoji_plan;
     var autonomy_response = document.getElementById("autonomy_response")
+    var autonomy_plans = document.getElementById("autonomy_plans")
 
     var addBtn = document.getElementById("addBtn")
+    var addBtn2 = document.getElementById("addBtn2")
+
     var trophyname = document.getElementById("trophyname")
     var barriers = document.getElementById("barriers")
     var efficacy_plans = document.getElementById("efficacy_plans")
@@ -30,25 +34,61 @@
 
 /*     autonomy      */
     $(function(){
-        $('input[type="button"]').click(function() {
-            fired_button = $(this).val();
-            return (fired_button);
+        $('input[class="positive"]').click(function() {
+            emoji = $(this).val();
+            return (emoji);
     });
+                });
+    $(function(){
+        $('input[class="negative"]').click(function() {
+            emoji = $(this).val();
+            return (emoji);
+    });
+                });
 
     $(function(){
-        $("#addBtn").click(function(){
-          alert(fired_button);
+        $('input[class="future_emoji"]').click(function() {
+            emoji_plan = $(this).val();
+            alert(emoji_plan);
+            return (emoji_plan);
+    });
+   });
+
+    $(function(){
+        $(addBtn).click(function(e){
+          e.preventDefault();
+          alert(emoji);
         db.collection("autonomy1").add({
           p_id: "T_001",
-          emoji : fired_button,
+          emoji : emoji,
           autonomy_response : autonomy_response.value,
+          phase: "1st",
           time: time
             })
+          .then(function() {
+              window.location.href='autonomy2.html';
+          })
           });              
-        })
+        });
 
 
-    });
+    $(function(){
+        $(addBtn2).click(function(e){
+          e.preventDefault();
+          alert(emoji_plan);
+        db.collection("autonomy2").add({
+          p_id: "T_001",
+          emoji_plan : emoji_plan,
+          autonomy_plans: autonomy_plans.value,
+          phase: "1st",
+          time: time
+            })
+          .then(function() {
+              window.location.href='success.html';
+          })
+          });              
+        });
+
 
 
 
@@ -107,21 +147,19 @@
     }
 
 
-/*     combined      */
-    if(trophyname){
-      addBtn.addEventListener('click', e => {
-        e.preventDefault();
-        db.collection("efficacy1").add({
-        p_id: "T_001",
-        trophyname : trophyname.value,
-        time: time
-          })
-          .then(function() {
-              alert('success');
-              window.location.href='efficacy2.html';
-          })
-          .catch(function(error) {
-              console.error("Error adding document: ", error);
-          });
+/*     combined      
+    $(function(){
+        $("#addBtn").click(function(){
+          alert(emoji);
+        db.collection("combined").add({
+          p_id: "T_001",
+          emoji : emoji,
+          autonomy_response : autonomy_response.value,
+          trophyname : trophyname.value,
+          future_emoji: future_emoji,
+          phase: "1st",
+          time: time
+            })
+          });              
         });
-    }
+*/

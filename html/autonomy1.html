@@ -20,11 +20,6 @@
                 });
             });
         });
-            $(function(){
-                $("input").click(function() {
-                    var fired_button = $(this).val();
-                });
-            });
 
 
     </script>
@@ -39,7 +34,7 @@
 
 
 
-    <h1>Intervention Type 1</h1>
+    <h1>This past week</h1>
     <p>How do you feel about your efforts to be active <U>this past week?</U> Select the emoji that best represents your feeling about your activity efforts.</p>
     
     <table id="emoji">
@@ -100,12 +95,10 @@
     </script>
 
 
-    <div class="pager">
-	    <a href="stepcount.html" class="previous">&laquo; Previous</a>
-	    <a href="autonomy2.html" class="next">Next &raquo;</a>
-	</div>
+    <a href="stepcount.html" class="previous">&laquo; Previous</a>
+    <a href="autonomy2.html" class="next" id="addBtn">Next &raquo;</a>
 
-    <button id="addBtn"> Try </button>
+
 
   <script src="script/myscripts.js"></script>
   </body>
