@@ -15,32 +15,63 @@
 
     firebase.initializeApp(firebaseConfig);
 
-
     var db = firebase.firestore();
 
-    const addBtn = document.getElementById("addBtn")
-    const trophyname = document.getElementById("trophyname")
-    const time = new Date();
+    var addBtn = document.getElementById("addBtn")
+    var trophyname = document.getElementById("trophyname")
+    var barriers = document.getElementById("barriers")
+    var efficacy_plans = document.getElementById("efficacy_plans")
+    var time = new Date();
 
     if(trophyname){
       addBtn.addEventListener('click', e => {
         e.preventDefault();
-        db.collection("efficacy").add({
-        first: "Bomi",
-        last: "Lovelace",
-        born: 1815,
+        db.collection("efficacy1").add({
+        p_id: "T_001",
         trophyname : trophyname.value,
         time: time
           })
-          .then(function(docRef) {
-              console.log("Document written with ID: ", docRef.id);
+          .then(function() {
+              alert('success');
+              window.location.href='efficacy2.html';
           })
           .catch(function(error) {
               console.error("Error adding document: ", error);
           });
         });
-
     }
 
+    if(barriers){
+      addBtn.addEventListener('click', e => {
+        e.preventDefault();
+        db.collection("efficacy2").add({
+        p_id: "T_001",
+        barriers : barriers.value,
+        time: time
+          })
+          .then(function() {            
+              window.location.href='success.html';
+          })
+          .catch(function(error) {
+              console.error("Error adding document: ", error);
+          });
+        });
+    }
 
-
+    if(efficacy_plans){
+      addBtn.addEventListener('click', e => {
+        e.preventDefault();
+        db.collection("efficacy3").add({
+        p_id: "T_001",
+        efficacy_plans : efficacy_plans.value,
+        time: time
+          })
+          .then(function() {
+              alert('success');
+              window.location.href='success.html';
+          })
+          .catch(function(error) {
+              console.error("Error adding document: ", error);
+          });
+        });
+    }

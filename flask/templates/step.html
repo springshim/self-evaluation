@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weekly Step Count</title>
     <link rel="stylesheet" type="text/css"
-      href="{{ url_for('static', filename='style2.css') }}"/>
+      href="{{ url_for('static', filename='style.css') }}"/>
   </head> 
 
 
@@ -20,14 +20,23 @@
       	var step_list = {{ step_list | tojson }};
         var data = google.visualization.arrayToDataTable([
 		  ['Date', 'steps per Day', 'goal'],
-		  [step_list[0][0], step_list[0][1], step_list[0][2]],
-		  [step_list[1][0], step_list[1][1], step_list[1][2]],
-		  [step_list[2][0], step_list[2][1], step_list[2][2]],
-		  [step_list[3][0], step_list[3][1], step_list[3][2]],
-		  [step_list[4][0], step_list[4][1], step_list[4][2]],
+		  [step_list[6][0], step_list[6][1], step_list[6][2]],
 		  [step_list[5][0], step_list[5][1], step_list[5][2]],
-		  [step_list[6][0], step_list[6][1], step_list[6][2]]
+		  [step_list[4][0], step_list[4][1], step_list[4][2]],
+		  [step_list[3][0], step_list[3][1], step_list[3][2]],
+		  [step_list[2][0], step_list[2][1], step_list[2][2]],
+		  [step_list[1][0], step_list[1][1], step_list[1][2]],
+		  [step_list[0][0], step_list[0][1], step_list[0][2]]
         ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
+
 
         var options = {
           title : 'Weekly Step Count',
@@ -41,16 +50,21 @@
               height: 400,
               bar: {groupWidth: "90%"},
               areaOpacity: 0}
-            }
+            }       
         };
 
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
+        chart.draw(view, options);
       }
     </script>
   <body>
+
+
+    <h1> {{ p_id }} </h1>
     <center>
     <div id="chart_div" style="width: 100%; height: 500px;"></div>
+
+    <a href="{{ url_for('efficacy1')}}" class="next">Next &raquo;</a>
   </center>
 </body>
 </html>

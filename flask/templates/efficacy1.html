@@ -3,17 +3,24 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Intervention type 2 - first page</title>
-    <link rel="stylesheet" type="text/css" href="style/efficacy.css" />
+    <link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"/>
   </head>
   <body>
 
-
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+  <h1> {{p_id}} </h1>
 
     <h1>Intervention Type 2</h1>
     <p>Think about your activity this past week. Name at least one thing you were able to accomplish. Write your accomplishment as the name of a trophy. You earned it!</p>
@@ -35,7 +42,11 @@
     </ul>
 
       <a href="stepcount.html" class="previous">&laquo; Previous</a>
-      <a href="efficacy2.html" class="next" id="addBtn">Next &raquo;</a>
+      <a href="efficacy2.html" class="next">Next &raquo;</a>
+
+
+
+    <button id="addBtn">Next</button>
 
 
   <script src="script/myscripts.js"></script>
