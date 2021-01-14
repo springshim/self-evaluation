@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intervention type 1 - first page</title>
+    <link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"/>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("td").each(function () {
+                $(this).click(function () {
+                	$("td").removeClass("selected");
+                    $(this).addClass("selected");
+                });
+            });
+        });
+
+    var p_id = {{ p_id | tojson }};
+    </script>
+
+
+  </head>
+  <body>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+
+    <h1> {{p_id}} </h1>
+    <h1>This past week</h1>
+    <p>How do you feel about your efforts to be active <U>this past week?</U> Select the emoji that best represents your feeling about your activity efforts.</p>
+    
+    <table id="emoji">
+	  <tr>
+	    <td onclick="positive()"><input type="button" class="positive" value="😀"></td>
+	    <td onclick="positive()"><input type="button" class="positive" value="😎"></td>
+	    <td onclick="positive()"><input type="button" class="positive" value="😍"></td>
+	    <td onclick="positive()"><input type="button" class="positive" value="😆"></td>
+	    <td onclick="positive()"><input type="button" class="positive" value="😄"></td>
+	  </tr>
+	  <tr>
+	    <td onclick="positive()"><input type="button" class="positive" value="😉"></td>
+	    <td onclick="positive()"><input type="button" class="positive" value="😅"></td>
+	    <td onclick="positive()"><input type="button" class="positive" value="🙂"></td>
+	    <td onclick="positive()"><input type="button" class="positive" value="🤩"></td>
+	    <td onclick="positive()"><input type="button" class="positive" value="😙"></td>
+	  </tr>
+	  <tr>
+	    <td onclick="negative()"><input type="button" class="negative" value="😥"></td>
+	    <td onclick="negative()"><input type="button" class="negative" value="😕"></td>
+	    <td onclick="negative()"><input type="button" class="negative" value="😧"></td>
+	    <td onclick="negative()"><input type="button" class="negative" value="😨"></td>
+	    <td onclick="negative()"><input type="button" class="negative" value="😤"></td>
+	  </tr>
+	  <tr>
+	    <td onclick="negative()"><input type="button" class="negative" value="😫"></td>
+	    <td onclick="negative()"><input type="button" class="negative" value="😭"></td>
+	    <td onclick="negative()"><input type="button" class="negative" value="😱"></td>
+	    <td onclick="negative()"><input type="button" class="negative" value="😵"></td>
+	    <td onclick="negative()"><input type="button" class="negative" value="😡"></td>
+	  </tr>
+	</table>
+
+
+	<p id="prompt"></p>
+	<center>
+	<div id="hide_text">
+		<input type="text" id="autonomy_response" name="autonomy_response">
+	</div>
+	</center>
+
+    <script>
+    	function positive(){
+    		document.getElementById("prompt").innerHTML = "Sounds like things went well! What choices did you make that contributed to your success in being physically active this week? Name at least one specific choice you made.";
+    		var text = document.getElementById("hide_text");
+    		if (text) {
+    			text.setAttribute("id", "show_text");
+    		}
+    	}
+
+    	function negative(){
+    		document.getElementById("prompt").innerHTML = "Sorry to hear things didn’t go so well. What could you have done this past week to help you be more physically active? Name at least one specific choice you could have made differently.";
+    		var text = document.getElementById("hide_text");
+    		if (text) {
+    			text.setAttribute("id", "show_text");
+    		}
+    	}
+    </script>
+
+
+    <a href="{{ url_for('autonomy2')}}" class="previous">&laquo; Previous</a>
+    <a id="addBtn" href="{{ url_for('autonomy2')}}" class="next">Next &raquo;</a>
+
+    <button id="test">Test </button>
+
+  <script src="{{url_for('static', filename='myscripts.js')}}"></script>
+
+  </body>
+</html>

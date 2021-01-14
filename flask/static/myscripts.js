@@ -54,29 +54,22 @@
     });
    });
 
-    $(function(){
-        $(#back).click(function(e){
-          e.preventDefault();
-          window.history.back();
-
-          });              
-        });
-
 
     $(function(){
         $(addBtn).click(function(e){
           e.preventDefault();
           alert(emoji);
         db.collection("autonomy1").add({
-          p_id: "T_001",
+          p_id: p_id,
           emoji : emoji,
           autonomy_response : autonomy_response.value,
           phase: "1st",
           time: time
             })
           .then(function() {
+              window.location.href='autonomy2';
           })
-          });              
+          });            
         });
 
 
@@ -92,10 +85,10 @@
           time: time
             })
           .then(function() {
+            window.location.href='success';
           })
           });              
         });
-
 
 
 

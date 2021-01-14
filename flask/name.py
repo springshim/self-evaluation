@@ -63,11 +63,29 @@ def my_form_post():
             return render_template('name.html', message=message)        
 
 
+@app.route('/autonomy1')
+def autonomy1():
+    p_id = p_id_list
+    return render_template('autonomy1.html', p_id=p_id)
+
+@app.route('/autonomy2')
+def autonomy2():
+    p_id = p_id_list
+    return render_template('autonomy2.html', p_id=p_id)
+
+@app.route('/success')
+def success():
+    p_id = p_id_list
+    return render_template('success.html', p_id=p_id)
+
+
 
 @app.route('/efficacy1')
 def efficacy1():
     p_id = p_id_list
     return render_template('efficacy1.html', p_id=p_id)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

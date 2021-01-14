@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intervention type 1 - first page</title>
+    <link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"/>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("td").each(function () {
+                $(this).click(function () {
+                  $("td").removeClass("selected");
+                    $(this).addClass("selected");
+                });
+            });
+        });
+
+
+    </script>
+
+
+  </head>
+  <body>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+
+
+    <h1>This coming week</h1>
+    <p>How do you hope to feel about your efforts to be physically active <u>this coming week?</u> Select the emoji that best represents these feelings.</p>
+    
+    <table id="emoji">
+    <tr>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😀"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😎"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😍"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😆"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😄"></td>
+    </tr>
+    <tr>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😉"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😅"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="🙂"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="🤩"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😙"></td>
+    </tr>
+    <tr>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😥"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😕"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😧"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😨"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😤"></td>
+    </tr>
+    <tr>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😫"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😭"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😱"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😵"></td>
+      <td onclick="future_emoji()"><input type="button" class="future_emoji" value="😡"></td>
+    </tr>
+  </table>
+
+
+  <p id="prompt"></p>
+  <center>
+  <div id="hide_text">
+    <input type="text" id="autonomy_plans" name="autonomy_plans">
+  </div>
+  </center>
+
+    <script>
+      function future_emoji(){
+        document.getElementById("prompt").innerHTML = "Think about your plans for the upcoming week. What can you do to meet your physical activity goals? Name at least one particular action you can take.";
+        var text = document.getElementById("hide_text");
+        if (text) {
+          text.setAttribute("id", "show_text");
+        }
+      }
+
+    </script>
+
+
+    <a href="{{ url_for('autonomy1')}}" class="previous">&laquo; Previous</a>
+    <a href="{{ url_for('success')}}" class="next" id="addBtn2">Next &raquo;</a>
+
+
+
+  <script src="{{url_for('static', filename='myscripts.js')}}"></script>
+  </body>
+</html>

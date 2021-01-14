@@ -25,7 +25,7 @@ table{
 }
 
 
-.positive, .negative{
+.positive, .negative, .future_emoji{
   border: none;
   display: inline-block;
   font-size: xx-large;
@@ -47,7 +47,7 @@ table{
 	display: none;
 }
 
-#autonomy_response{
+#autonomy_response, #autonomy_plans{
 	text-align: left;
  	margin: 0 auto;
 	height: 100px;
