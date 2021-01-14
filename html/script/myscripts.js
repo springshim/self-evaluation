@@ -17,12 +17,42 @@
 
     var db = firebase.firestore();
 
+    var fired_button;
+    var autonomy_response = document.getElementById("autonomy_response")
+
     var addBtn = document.getElementById("addBtn")
     var trophyname = document.getElementById("trophyname")
     var barriers = document.getElementById("barriers")
     var efficacy_plans = document.getElementById("efficacy_plans")
+ 
     var time = new Date();
 
+
+/*     autonomy      */
+    $(function(){
+        $('input[type="button"]').click(function() {
+            fired_button = $(this).val();
+            return (fired_button);
+    });
+
+    $(function(){
+        $("#addBtn").click(function(){
+          alert(fired_button);
+        db.collection("autonomy1").add({
+          p_id: "T_001",
+          emoji : fired_button,
+          autonomy_response : autonomy_response.value,
+          time: time
+            })
+          });              
+        })
+
+
+    });
+
+
+
+/*     efficacy      */
     if(trophyname){
       addBtn.addEventListener('click', e => {
         e.preventDefault();
@@ -69,6 +99,26 @@
           .then(function() {
               alert('success');
               window.location.href='success.html';
+          })
+          .catch(function(error) {
+              console.error("Error adding document: ", error);
+          });
+        });
+    }
+
+
+/*     combined      */
+    if(trophyname){
+      addBtn.addEventListener('click', e => {
+        e.preventDefault();
+        db.collection("efficacy1").add({
+        p_id: "T_001",
+        trophyname : trophyname.value,
+        time: time
+          })
+          .then(function() {
+              alert('success');
+              window.location.href='efficacy2.html';
           })
           .catch(function(error) {
               console.error("Error adding document: ", error);

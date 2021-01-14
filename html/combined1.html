@@ -25,6 +25,11 @@
 
   </head>
   <body>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
     <h1>Intervention Type 1</h1>
     <p>How do you feel about your efforts to be active <U>this past week?</U> Select the emoji that best represents your feeling about your activity efforts.</p>
     
@@ -87,9 +92,9 @@
 
     <div class="pager">
 	    <a href="stepcount.html" class="previous">&laquo; Previous</a>
-	    <a href="combined2.html" class="next">Next &raquo;</a>
+	    <a href="combined2.html" class="next" id="addBtn">Next &raquo;</a>
 	</div>
 
-
+  <script src="script/myscripts.js"></script>
   </body>
 </html>
